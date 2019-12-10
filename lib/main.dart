@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           new TextField(
             controller: eCtrl,
             onSubmitted: (text) {
+              AppCenterAnalytics.trackEvent("Adding item", {"List Item": text});
               tasks.add(text);
               eCtrl.clear();
               setState(() {});
